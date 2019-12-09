@@ -1,0 +1,51 @@
+{
+    "name": "pluswerk/typoscript-linter-sniffer",
+    "description": "Adds some sniffer to the typoscript linter of Marting Helmich.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "keywords": ["TYPO3 CMS", "TypoScript"],
+    "authors": [
+        {
+            "name": "Sebastian Hofer",
+            "email": "sebastian.hofer@pluswerk.ag",
+            "homepage": "http://pluswerk.ag",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.2.0",
+        "helmich/typo3-typoscript-lint": "^2.0",
+        "typo3/minimal": "^9.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.4",
+        "pluswerk/grumphp-config": "^3.0",
+        "dg/bypass-finals": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pluswerk\\TypoScriptSniffer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Pluswerk\\TypoScriptSniffer\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/public"
+        },
+        "pluswerk/grumphp-config": {
+            "auto-setting": false
+        },
+        "grumphp": {
+            "config-default-path": "grumphp.yml"
+        }
+    }
+}
